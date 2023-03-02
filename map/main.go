@@ -9,12 +9,21 @@ func main() {
 	// 	"red":   "#ff0000",
 	// 	"green": "#4bf745",
 	// 	"blue":  "#0000ff",
-	// }
+	// delete(colors, "white")
+	//
 
-	colors := make(map[string]string)
-	colors["white"] = "#ffffff"
-	colors["black"] = "#000000"
-	delete(colors, "white")
+	colors := map[string]string{
 
-	fmt.Println(colors)
+		"red":   "#ff0000",
+		"green": "#4bf745",
+		"blue":  "#0000ff",
+	}
+	printMap(colors)
+
+}
+
+func printMap(c map[string]string) {
+	for color, hex := range c {
+		fmt.Println("Hex code for", color, "is", hex)
+	}
 }
